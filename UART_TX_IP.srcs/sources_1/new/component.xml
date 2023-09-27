@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>xilinx.com</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>UART_TX</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>iSystem_Clock</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>iSystem_Clock</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
+        <spirit:displayName>Synthesis</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>UART_TX</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagesynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>2b961290</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
+        <spirit:displayName>Simulation</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>Verilog</spirit:language>
+        <spirit:modelName>UART_TX</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>2b961290</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>a4a40231</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_testbench</spirit:name>
+        <spirit:displayName>Test Bench</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:simulation.testbench</spirit:envIdentifier>
+        <spirit:modelName>TB</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_testbench_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>c3bace2c</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>iSystem_Clock</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>iReset</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>iValid_Data</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>iData</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">0</spirit:left>
+            <spirit:right spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_SIZE&apos;)) - 1)">7</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic_vector</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>oData</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>oBusy</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>std_logic</spirit:typeName>
+              <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>SYSTEM_CLOCK</spirit:name>
+        <spirit:displayName>System Clock</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.SYSTEM_CLOCK">50000000</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>UART_BAUDRATE</spirit:name>
+        <spirit:displayName>Uart Baudrate</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.UART_BAUDRATE">9600</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>DATA_SIZE</spirit:name>
+        <spirit:displayName>Data Size</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_SIZE">8</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>PARITY_ENABLE</spirit:name>
+        <spirit:displayName>Parity Enable</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PARITY_ENABLE" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>PARITY_ODD_EVEN</spirit:name>
+        <spirit:displayName>Parity Odd Even</spirit:displayName>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.PARITY_ODD_EVEN" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>STOP_BITS</spirit:name>
+        <spirit:displayName>Stop Bits</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.STOP_BITS">1</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_pairs_2cecd19e</spirit:name>
+      <spirit:enumeration spirit:text="EVEN">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="ODD">1</spirit:enumeration>
+    </spirit:choice>
+    <spirit:choice>
+      <spirit:name>choice_pairs_2d96f706</spirit:name>
+      <spirit:enumeration spirit:text="NO">0</spirit:enumeration>
+      <spirit:enumeration spirit:text="YES">1</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagesynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>UART_TX.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_2b961290</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_anylanguagebehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>UART_TX.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/UART_TX_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_a4a40231</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_testbench_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>../../sim_1/new/TB.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_implementation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+        <spirit:userFileType>USED_IN_synthesis</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>../../../TB_behav.wcfg</spirit:name>
+        <spirit:fileType>unknown</spirit:fileType>
+        <spirit:userFileType>USED_IN_simulation</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>UART_TX_v1_0</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>SYSTEM_CLOCK</spirit:name>
+      <spirit:displayName>System Clock</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SYSTEM_CLOCK" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">50000000</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>UART_BAUDRATE</spirit:name>
+      <spirit:displayName>Uart Baudrate</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.UART_BAUDRATE" spirit:minimum="1" spirit:maximum="1000000000" spirit:rangeType="long">9600</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DATA_SIZE</spirit:name>
+      <spirit:displayName>Data Size</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_SIZE" spirit:minimum="1" spirit:maximum="100000" spirit:rangeType="long">8</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PARITY_ENABLE</spirit:name>
+      <spirit:displayName>Parity Enable</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.PARITY_ENABLE" spirit:choiceRef="choice_pairs_2d96f706" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>PARITY_ODD_EVEN</spirit:name>
+      <spirit:displayName>Parity Odd Even</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.PARITY_ODD_EVEN" spirit:choiceRef="choice_pairs_2cecd19e" spirit:bitStringLength="1">&quot;0&quot;</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>STOP_BITS</spirit:name>
+      <spirit:displayName>Stop Bits</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.STOP_BITS" spirit:minimum="1" spirit:maximum="2" spirit:rangeType="long">1</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">UART_TX_v1_0</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Production">virtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qvirtex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qkintex7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">artix7l</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qartix7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">qzynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">azynq</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">spartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">aspartan7</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexu</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">zynquplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplusHBM</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">virtexuplus58g</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexuplus</xilinx:family>
+        <xilinx:family xilinx:lifeCycle="Production">kintexu</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>/UserIP</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>UART_TX_v1_0</xilinx:displayName>
+      <xilinx:definitionSource>package_project</xilinx:definitionSource>
+      <xilinx:coreRevision>9</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2023-09-27T19:17:02Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20d3e12c_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a770b75_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4490a13a_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@378c1551_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5da796f3_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a00468d_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@c0c1746_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35f99623_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@cca3d0_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4df4363_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c02dbfa_ARCHIVE_LOCATION">c:/gena/studying/programming/verilog/-----------documentation--------/selfmade_ip_cores/uart_tx_ip/uart_tx_ip.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4aaab299_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a717573_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c83f4ec_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d2429d8_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38368ff9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@278dc07e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1281974e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@766f5121_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ecb491a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b31c6e1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e3ade41_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55a3a73c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375d2d1e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d218c4b_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45f526a5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c804008_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a5608dd_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44fffe21_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@340416f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7658b1e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@69487d75_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7756ed21_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55e33cda_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10602a10_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2653eb12_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33cdb2de_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29a43c45_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1653d2f8_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e48eed_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@132cc68_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@318937a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f708df4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@9e9b314_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@337ab67d_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e1bef91_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d7875c5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c41b948_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@837652e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ee9b7e2_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17c3c6b9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b2b134_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@688669c9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b593386_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d44ccb4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c9e9169_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74f96b9a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5383d8c3_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4517b922_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@789bab20_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@376649f7_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15952080_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8b15e33_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13ce479b_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f7dfbb_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7f42b3f1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@178c5d4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d584f92_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@582d6409_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19abe616_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3baf4475_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40923e51_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fae516b_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c244708_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2634062c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26537562_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@80a37f0_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49ba8b3_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@73f0f44f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6485b649_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@634715e4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b1dda79_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7818bd4d_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@259c7d6c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3048a946_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76df644f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12277fa5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2843cd97_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18ba7181_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@589c015c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b35841_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d160c0f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65747b3e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16467484_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7870cac9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32274ed4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f084d42_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@46f858f8_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@219954d4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e93dd1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d708e43_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2c5f6980_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@180b90f2_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@628bb25b_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13edec25_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@358090cd_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1327d37e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ed4f8ff_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5dd02fc_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36a8afc5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c12869e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@379ad20a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@568f21a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@337b1ce5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f261300_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a0cff1c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35eafff2_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dcbfbc2_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@730b8e93_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14022ce3_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@87fc91c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ebe52c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3d6ac937_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c351239_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42214c9b_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35a16fbb_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29b82b30_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b2176d1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a02f8f9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19d52a51_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d5b9fee_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@424c0cdb_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30dcda26_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@615c8705_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ba52eaf_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@50cc1d06_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fa73b3a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ac61ced_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a600fc5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@682cc1c1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c7fb69f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@535340d2_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4db6f5f9_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5e91aee5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@65440fbb_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4fe800f1_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@238d631c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@138f2562_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41661b1f_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75098f9e_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6039e5ef_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36d9ee12_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@615e9751_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c9488d5_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@55d1bf48_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@960287_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c2bc73c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@585e3ff6_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d06d0c0_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@401cac90_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b8407d4_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ed77cac_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a15841c_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a17320a_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35149366_ARCHIVE_LOCATION">c:/Gena/Studying/Programming/Verilog/-----------Documentation--------/Selfmade_IP_cores/UART_TX_IP/UART_TX_IP.srcs/sources_1/new</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="6a2c7481"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="99d87ee6"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="56daf0f9"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="3bb85a71"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="fc6e7689"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
